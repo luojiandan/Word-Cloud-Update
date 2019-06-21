@@ -3,7 +3,7 @@
 
 IDE：Visual Studio Code
 
-下载后先运行代码：npm install
+  下载后先运行代码：npm install
 
 官方库地址：
 
