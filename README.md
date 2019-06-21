@@ -1,6 +1,10 @@
 # Word-Cloud-Update
 更新了官方的文字云
 
+IDE：Visual Studio Code
+
+下载后先运行代码：npm install
+
 官方库地址：
 
 https://github.com/microsoft/PowerBI-visuals-WordCloud
