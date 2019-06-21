@@ -1,0 +1,253 @@
+{
+    "supportsHighlight":true,
+    "dataRoles": [
+        {
+            "name": "Category",
+            "displayNameKey": "Visual_Category",
+            "kind": "Grouping",
+            "displayName": "类别"
+        },
+        {
+            "name": "Values",
+            "displayNameKey": "Visual_Values",
+            "kind": "Measure",
+            "displayName": "值"
+        },
+        {
+            "name": "Excludes",
+            "displayNameKey": "Visual_Excludes",
+            "kind": "Grouping",
+            "displayName": "不包含"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "Category": {
+                        "min": 0,
+                        "max": 1
+                    },
+                    "Values": {
+                        "min": 0,
+                        "max": 1
+                    },
+                    "Excludes": {
+                        "min": 0,
+                        "max": 1
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "Category"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "Excludes"
+                            }
+                        }
+                    ],
+                    "dataReductionAlgorithm": {
+                        "top": {
+                            "count": 2500
+                        }
+                    }
+                },
+                "values": {
+                    "for": {
+                        "in": "Values"
+                    }
+                }
+            }
+        }
+    ],
+    "sorting": {
+        "implicit": {
+            "clauses": [
+                {
+                    "role": "Values",
+                    "direction": 2
+                }
+            ]
+        }
+    },
+    "objects": {
+        "general": {
+            "displayName": "常规",
+            "displayNameKey": "Visual_General",
+            "properties": {
+                "TransparencyOfHighlight": {
+                    "displayName": "突出显示透明度(0..1)",
+                    "displayNameKey": "Visual_WordCloud_TransparencyOfHighlight",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "maxNumberOfWords": {
+                    "displayName": "最大字数",
+                    "displayNameKey": "Visual_WordCloud_MaxNumberWords",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "minRepetitionsToDisplay": {
+                    "displayName": "显示最少的重复次数",
+                    "displayNameKey": "Visual_WordCloud_minRepetitionsToDisplay",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "minFontSize": {
+                    "displayName": "最小字号",
+                    "displayNameKey": "Visual_MinFontSize",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "maxFontSize": {
+                    "displayName": "最大字号",
+                    "displayNameKey": "Visual_MaxFontSize",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "isBrokenText": {
+                    "displayName": "分词",
+                    "displayNameKey": "Visual_WordCloud_WordBreaking",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "isPunctuationsCharacters": {
+                    "displayName": "特殊字符",
+                    "displayNameKey": "Visual_WordCloud_SpecialCharacters",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+        "dataPoint": {
+            "displayName": "数据颜色",
+            "displayNameKey": "Visual_DataColors",
+            "properties": {
+                "defaultColor": {
+                    "displayName": "默认颜色",
+                    "displayNameKey": "Visual_DefaultColor",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fill": {
+                    "displayName": "填充",
+                    "displayNameKey": "Visual_Fill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "stopWords": {
+            "displayName": "非索引字",
+            "displayNameKey": "Visual_WordCloud_StopWords",
+            "properties": {
+                "show": {
+                    "displayName": "Show",
+                    "displayNameKey": "Visual_Show",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "isDefaultStopWords": {
+                    "displayName": "默认非索引字",
+                    "displayNameKey": "Visual_WordCloud_DefaultStopWords",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "words": {
+                    "displayName": "字",
+                    "displayNameKey": "Visual_WordCloud_Words",
+                    "type": {
+                        "text": true
+                    }
+                }
+            }
+        },
+        "rotateText": {
+            "displayName": "旋转文本",
+            "displayNameKey": "Visual_RotateText",
+            "properties": {
+                "show": {
+                    "displayName": "显示",
+                    "displayNameKey": "Visual_Show",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "minAngle": {
+                    "displayName": "最小角",
+                    "displayNameKey": "Visual_MinAngle",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "maxAngle": {
+                    "displayName": "最大角",
+                    "displayNameKey": "Visual_MaxAngle",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "maxNumberOfOrientations": {
+                    "displayName": "最大方向数",
+                    "displayNameKey": "Visual_WordCloud_MaxOrientationNumber",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+        "performance": {
+            "displayName": "性能",
+            "displayNameKey": "Visual_Performance",
+            "properties": {
+                "preestimate": {
+                    "displayName": "要绘制的预估计字词数",
+                    "displayNameKey": "Visual_PreestimateWordCount",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "quality": {
+                    "displayName": "质量",
+                    "displayNameKey": "Visual_Quality",
+                    "description": "值确定了预估计的质量",
+                    "descriptionKey": "Visual_Description_Quality",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
