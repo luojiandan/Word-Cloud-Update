@@ -1,0 +1,4 @@
+*.js linguist-language=TypeScript
+*.less linguist-language=TypeScript
+*.ts linguist-language=TypeScript
+* -text
