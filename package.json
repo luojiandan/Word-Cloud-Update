@@ -15,7 +15,7 @@
     "@types/lodash": "^4.14.134",
     "core-js": "^2.6.8",
     "d3": "^3.5.17",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "powerbi-visuals-api": "~2.6.0",
     "powerbi-visuals-utils-colorutils": "^2.2.0",
     "powerbi-visuals-utils-dataviewutils": "^2.2.0",
